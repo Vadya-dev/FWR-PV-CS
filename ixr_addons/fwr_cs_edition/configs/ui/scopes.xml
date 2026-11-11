@@ -1,0 +1,75 @@
+<w>
+  <wpn_crosshair x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\Scope\4x3\scope_pso-1</texture>
+    </auto_static>
+  </wpn_crosshair>
+
+  <wpn_crosshair_acog x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\Scope\4x3\scope_acog</texture>
+    </auto_static>
+  </wpn_crosshair_acog>
+  
+  <wpn_crosshair_class x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_class</texture>
+    </auto_static>
+  </wpn_crosshair_class>
+
+  <wpn_crosshair_l85 x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\Scope\4x3\scope_susat</texture>
+    </auto_static>
+  </wpn_crosshair_l85>
+
+  <wpn_crosshair_susat x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\Scope\4x3\scope_susat</texture>
+    </auto_static>
+  </wpn_crosshair_susat>
+
+  <wpn_crosshair_4x34 x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\Scope\4x3\scope_4x34</texture>
+    </auto_static>
+  </wpn_crosshair_4x34>
+  
+      <wpn_crosshair_fn2000 x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\Scope\4x3\scope_fn2000</texture>
+    </auto_static>
+  </wpn_crosshair_fn2000>
+
+  <wpn_crosshair_g36 x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\Scope\4x3\scope_g36</texture>
+    </auto_static>
+  </wpn_crosshair_g36>
+
+  <wpn_crosshair_rpg x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\Scope\4x3\scope_pgo-7</texture>
+    </auto_static>
+  </wpn_crosshair_rpg>
+
+  <wpn_crosshair_pks x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\Scope\4x3\scope_pks</texture>
+    </auto_static>
+  </wpn_crosshair_pks>
+
+  <wpn_crosshair_vss x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\Scope\4x3\scope_vss</texture>
+    </auto_static>
+  </wpn_crosshair_vss>
+
+  <wpn_crosshair_bino x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_bino</texture>
+    </auto_static>
+  </wpn_crosshair_bino>
+
+</w>
+

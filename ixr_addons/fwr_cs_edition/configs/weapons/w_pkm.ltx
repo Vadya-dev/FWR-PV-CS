@@ -1,0 +1,279 @@
+; ѕулемет  алашников модернизированый (6ѕ6)
+;-(правлено SR)-------------------------------------
+; калибр 				7.62x54 мм
+; длина ствола 				658 мм
+; магазин				100, 150, 250 на ленте
+; вес без магазина			7.5
+; эффективна€ дальность стрельбы	800 м
+; прицельна€ дальность			1500 м
+; дульна€ скорость пули			825 м/с
+; темп стрельбы				650 в/с
+;---------------------------------------------------
+[wpn_pkm]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection		= spawn_group
+discovery_dependency		=
+$spawn				= "weapons\pkm"		; option for Level Editor
+$npc				= on			; option for Level Editor
+$prefetch			= 8
+scheduled			= off			; option for ALife Simulator
+cform				= skeleton
+class				= WP_AK74
+min_radius			= 5
+max_radius			= 200
+description			= st_wpn_rp_descr
+
+ef_main_weapon_type		= 2
+ef_weapon_type			= 6
+
+default_to_ruck			= false
+sprint_allowed			= false
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof			= 0.5, 1.0, 180
+reload_dof			= 0.0, 0.5, 5, 1.7
+;-------------------------------------------------------
+
+upgrades			= up_gr_a_pkm, up_gr_b_pkm, up_gr_c_pkm, up_gr_d_pkm, up_gr_e_pkm
+installed_upgrades		=
+upgrade_scheme			= upgrade_scheme_u8
+
+;-------------------------------------------------------------------------------
+holder_range_modifier		= 3.0			; во сколько раз увеличиваетс€ eye_range
+holder_fov_modifier		= 1.2			; во сколько раз увеличиваетс€ eye_fov
+;-------------------------------------------------------------------------------
+
+cost				= 50000
+weapon_class			= assault_rifle		; Type of the weapon
+
+fire_modes			= 15, 30, -1
+
+ammo_limit			= 300
+ammo_current			= 200
+ammo_elapsed			= 100
+ammo_mag_size			= 100
+
+ammo_class			= ammo_pkm_100
+grenade_class			= ammo_vog-25, ammo_vog-25p 	
+
+launch_speed			= 73.5
+
+hand_dependence			= 2
+single_handed			= 0
+
+slot				= 2			; // secondary
+animation_slot			= 2			; type of the animation that will be used
+
+inv_name			= st_wpn_rp
+inv_name_short			= st_wpn_rp
+inv_weight			= 7.5
+
+inv_grid_width			= 6
+inv_grid_height			= 2
+inv_grid_x			= 0
+inv_grid_y			= 36
+
+kill_msg_x			= 80
+kill_msg_y			= 59
+kill_msg_width			= 87
+kill_msg_height			= 24
+
+;-------------------------------------------------------------------------------
+;базова€ дисперси€
+fire_dispersion_base		= 0.229		;угол (в градусах) базовой дисперсии оружи€ (оружи€ зажатого в тисках)
+control_inertion_factor		= 3.0f
+
+;отдача
+cam_relax_speed			= 15		;скорость возврата в исходное положение
+cam_relax_speed_ai		= 360		;скорость возврата в исходное положение у ј»
+cam_dispersion			= 1.0		;увеличени€ угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.3		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 1.0		;ствол будет подыматьс€ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 5.0		;максимальный угол отдачи
+cam_max_angle_horz		= 15.0		;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 1.8		;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor= 5		;увеличение дисперсии в процентах при максимальном износе
+misfire_probability		= 0.0125	;веро€тность осечки при максимальном износе
+misfire_condition_k		= 0.02
+condition_shot_dec		= 0.00004	;увеличение износа при каждом выстреле
+;-------------------------------------------------------------------------------
+
+hud				= wpn_pkm_hud
+position			= -0.027, -0.097, 0.042
+orientation			= 0, -2, 0
+
+fire_point			= 0.0, 0.158, 0.845;0.000000,0.137000,0.649000
+fire_point2			= 0.0, 0.097, 0.722
+
+flame_particles			= weapons\generic_weapon05
+smoke_particles			= weapons\generic_shoot_00
+grenade_flame_particles		= weapons\generic_weapon01
+
+shell_point			= -0.020000,0.167000,0.082000
+shell_dir			= 0.0, 0.0, 0.4
+shell_particles			= weapons\762x54l
+
+PDM_disp_base			= 1.5
+PDM_disp_vel_factor		= 1.45
+PDM_disp_accel_factor		= 1.45
+PDM_disp_crouch			= 0.2
+PDM_disp_crouch_no_acc		= 0.2
+
+; ttc
+hit_power			= 1.0, 1.0, 1.0, 1.0	; size of damage by bullet
+hit_impulse			= 120
+hit_type			= fire_wound
+
+fire_distance			= 800
+bullet_speed			= 825;начальна€ скорость пули
+rpm				= 650
+rpm_empty_click			= 200
+; end ttc
+
+use_aim_bullet			= false			; ѕоддерживаетс€ ли перва€ суппер пул€
+
+time_to_aim			= 5.0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position			= -0.26,-0.11,0.25	; position (offset) and orientation of the weapon when it is strapped
+strap_orientation		= -15,-9,110		; (3rd person view in degrees)
+strap_bone0			= bip01_spine2
+strap_bone1			= bip01_spine1
+
+startup_ammo			= 90
+visual				= dynamics\weapons\wpn_pkm\wpn_pkm.ogf
+
+light_disabled			= false
+light_color			= 0.6,0.5,0.3
+light_range			= 5
+light_var_color			= 0.05
+light_var_range			= 0.5
+light_time			= 0.2
+
+ph_mass				= 8
+
+;addons
+scope_status			= 0
+silencer_status			= 0
+grenade_launcher_status		= 0
+
+zoom_enabled			= true				; (on,off)zoom mode (right mouse button)
+scope_zoom_factor	 	= 80				; fov for zoom mode
+
+;звуки
+snd_draw		= weapons\pkm\pkm_draw
+snd_holster     	= weapons\rifle_holster
+snd_shoot		= weapons\pkm\pkm_shoot1
+snd_shoot1		= weapons\pkm\pkm_shoot2
+snd_shoot2		= weapons\pkm\pkm_shoot3
+snd_empty		= weapons\gen_empty, 0.5
+snd_reload		= weapons\pkm\pkm_reload
+snd_switch		= weapons\groza\groza_switch, 1.0, 0.5
+
+silencer_smoke_particles = weapons\generic_shoot_00
+
+silencer_hit_power		= 0
+silencer_hit_impulse		= 0
+silencer_fire_distance		= 0
+silencer_bullet_speed		= 0
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time		= 0.2
+
+[wpn_pkm_hud]:hud_base
+zoom_hide_crosshair	= true
+attach_place_idx	= 0
+item_visual		= dynamics\weapons\wpn_pkm\wpn_pkm_hud
+
+hands_position		= 0.000000,-0.090000,0.025300
+hands_orientation	= -0.050000,-0.010000,0.000000
+hands_position_16x9	= 0.000000,-0.090000,0.025300
+hands_orientation_16x9	= -0.050000,-0.010000,0.000000
+
+item_position		= 0.0,0.0,0.0
+item_orientation	= 0.4,1.8,0.0
+
+shell_point		= 0.033,0.027,0.218
+shell_dir               = 0.0,1.0,0.0
+shell_bone             	= wpn_body
+fire_point	  	= 0.0,0.053,0.931
+fire_bone		= wpn_body
+fire_point2		= -0.014000,0.010000,-0.037000
+fire_bone2		= wpn_body
+
+anm_show                = pkm_draw
+anm_hide                = pkm_holster
+anm_idle                = pkm_idle
+anm_idle_sprint         = pkm_sprint
+anm_idle_moving         = pkm_moving
+anm_shots               = pkm_shoot, shoot
+anm_reload              = pkm_reload, reload
+anm_idle_aim            = pkm_idle_aim
+anm_bore                = pkm_bore
+
+aim_hud_offset_pos 	= -0.132100,0.040900,0.025300;-0.132000,0.041100,0.021700
+aim_hud_offset_rot 	= 0.000200,-0.001900,0.000000;-0.001400,-0.002200,0.000000
+aim_hud_offset_pos_16x9 = -0.132100,0.040900,0.025300
+aim_hud_offset_rot_16x9 = 0.000200,-0.001900,0.000000
+
+lean_hud_offset_pos        = 0,0,0
+lean_hud_offset_rot        = 0,0,0
+
+;-----------------------------------------------------------------------------
+; ”никальные
+;-----------------------------------------------------------------------------
+[wpn_bozar]:wpn_pkm
+GroupControlSection		= spawn_group
+discovery_dependency		=
+$spawn				= "weapons\bozar"; option for Level Editor
+$npc				= on; option for Level Editor
+$prefetch			= 8
+scheduled			= off; option for ALife Simulator
+cform				= skeleton
+class				= WP_AK74
+min_radius			= 5
+max_radius			= 200
+description			= st_wpn_bozar_descr
+
+ef_main_weapon_type		= 3
+ef_weapon_type			= 8
+
+ammo_class			= ammo_223_fmj
+fire_modes			= 10
+
+inv_name			= st_wpn_bozar
+inv_name_short			= st_wpn_bozar
+
+fire_dispersion_base		= 0.01		;угол (в градусах) базовой дисперсии оружи€ (оружи€ зажатого в тисках)
+control_inertion_factor		= 5.0f
+
+;отдача
+cam_relax_speed			= 15		;скорость возврата в исходное положение
+cam_relax_speed_ai		= 360		;скорость возврата в исходное положение у ј»
+cam_dispersion			= 0.00001	;увеличени€ угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.00001	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 0		;ствол будет подыматьс€ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 0.001		;максимальный угол отдачи
+cam_max_angle_horz		= 0		;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 0.05
+
+visual				= dynamics\weapons\wpn_svd\wpn_svd.ogf
+hud				= wpn_svd_hud
+
+ammo_mag_size			= 300
+rpm				= 10000
+hit_impulse 			= 5000
+
+zoom_enabled			= true		; (on,off)zoom mode (right mouse button)
+scope_zoom_factor		= 20		; fov for zoom mode
+
+snd_draw			= weapons\svd_draw
+snd_holster			= weapons\generic_holster
+snd_shoot			= weapons\n_svd_shot
+snd_empty			= weapons\gen_empty, 0.5
+snd_reload			= weapons\svd_reload
+snd_close			= weapons\generic_close

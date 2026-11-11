@@ -1,0 +1,222 @@
+; SIG-Sauer P220 .45ACP
+;-(правлено SR)-------------------------------------
+; калибр 				11.43x23 мм
+; длина ствола 				112 мм
+; магазин				7
+; вес без магазина			1.13
+; эффективна€ дальность стрельбы	60 м
+; прицельна€ дальность			---
+; дульна€ скорость пули			345 м/с
+; темп стрельбы				30 в/м
+;---------------------------------------------------
+[wpn_sig220]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection		= spawn_group
+discovery_dependency 		=
+$spawn 				= "weapons\sig220"		; option for Level Editor
+$npc	 			= on							; option for Level Editor
+$prefetch 			= 8
+scheduled 			= off 				; option for ALife Simulator
+cform 				= skeleton
+class 				= WP_PM
+min_radius 			= 1
+max_radius 			= 20
+description			= st_wpn_sig220_descr
+
+ef_main_weapon_type		= 0
+ef_weapon_type			= 5
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof			= -1000, 1.0, 1000 
+reload_dof			= 0.0, 0.5, 5, 1.7
+;-----------------------------------------------------------------------------
+
+upgrades			= up_gr_ab_sig220, up_gr_cd_sig220, up_gr_e_sig220, up_gr_f_sig220, up_gr_g_sig220
+installed_upgrades		=
+upgrade_scheme			= upgrade_scheme_u9
+
+;--- scope weapons -------------------------------------------------------------
+holder_range_modifier		= 1.0				; во сколько раз увеличиваетс€ eye_range
+holder_fov_modifier		= 1.5				; во сколько раз увеличиваетс€ eye_fov
+;-------------------------------------------------------------------------------
+
+cost				= 3000
+
+ammo_limit			= 120
+ammo_current		 	= 96
+ammo_elapsed		 	= 16
+ammo_mag_size		 	= 10
+
+ammo_class			= ammo_11.43x23_fmj, ammo_11.43x23_hydro
+
+hand_dependence		 	= 1
+single_handed			= 1
+
+slot 				= 1
+animation_slot			= 1				; type of the animation that will be used
+
+inv_name			= st_wpn_sig220
+inv_name_short			= st_wpn_sig220
+inv_weight			= 1.13
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 17
+inv_grid_y			= 6
+
+kill_msg_x			= 72
+kill_msg_y			= 177
+kill_msg_width			= 31
+kill_msg_height			= 24
+
+;-------------------------------------------------------------------------------
+;базова€ дисперси€
+fire_dispersion_base		= 0.27 		;угол (в градусах) базовой дисперсии оружи€ (оружи€ зажатого в тисках)
+
+;отдача
+cam_relax_speed			= 7		;скорость возврата в исходное положение
+cam_relax_speed_ai		= 360   
+cam_dispersion			= 1.2		;увеличени€ угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.2		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 1.0		;ствол будет подыматьс€ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 10.0		;максимальный угол отдачи
+cam_max_angle_horz		= 10.0		;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 1.2		;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor= 10		;увеличение дисперсии в процентах при максимальном износе
+misfire_probability 		= 0.005		;веро€тность осечки при максимальном износе 
+misfire_condition_k		= 0.05
+condition_shot_dec 		= 0.00130 	;увеличение износа при каждом выстреле
+;-------------------------------------------------------------------------------
+
+hud 				= wpn_sig220_hud
+position 			= -0.021, -0.085, 0.0
+orientation 			= 0, 0, 0
+
+fire_point 			= 0.0, 0.133, 0.161
+
+flame_particles		 	= weapons\generic_weapon03
+smoke_particles		 	= weapons\generic_shoot_00
+grenade_flame_particles		= weapons\generic_weapon01
+
+shell_point		 	= 0.0, 0.133, 0.047
+shell_dir		 	= 0.0, 0.0, 0.4
+shell_particles	 		= weapons\45acp
+
+PDM_disp_base 			= 1.0
+PDM_disp_vel_factor 		= 0.4
+PDM_disp_accel_factor 		= 0.4
+PDM_disp_crouch	 		= 1.0
+PDM_disp_crouch_no_acc 		= 1.0
+
+; ttc
+hit_power			= 1.0, 1.0, 1.0, 1.0
+hit_impulse	 		= 125
+hit_type 			= fire_wound
+
+fire_distance 			= 60
+bullet_speed		 	= 345
+rpm 				= 250
+rpm_empty_click 	 	= 250
+; end ttc
+
+use_aim_bullet			= true			; ѕоддерживаетс€ ли перва€ суппер пул€
+time_to_aim			= 1.0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;strap_position 		= -0.1,-0.45,0.2	; position (offset) and orientation of the weapon when it is strapped
+;strap_orientation 		= 1.57,0,0						; (3rd person view)
+;strap_bone0			= bip01_spine2
+;strap_bone1			= bip01_spine1
+
+startup_ammo 			= 90
+visual 				= dynamics\weapons\wpn_sig220\wpn_sig220.ogf
+
+light_color		 	= 0.6,0.5,0.3
+light_range		 	= 3.0
+light_var_color		 	= 0.05
+light_var_range		 	= 0.5
+light_time 		 	= 0.2
+
+ph_mass			 	= 1
+
+;addons
+scope_status			= 0
+silencer_status			= 2
+grenade_launcher_status		= 0
+
+zoom_enabled			= true
+scope_zoom_factor		= 55
+
+silencer_name 			= wpn_addon_silencer	; section name for the attachable silencer
+silencer_x 			= 41						; offset in inventory icon
+silencer_y 			= -13
+
+;звуки
+snd_draw			= weapons\p226\p226_draw
+snd_empty			= weapons\p226\p226_empty
+snd_shoot			= weapons\p226\p226_shoot
+snd_shoot1			= weapons\p226\p226_shoot1
+snd_shoot2			= weapons\p226\p226_shoot2
+snd_silncer_shot		= weapons\p226\p226_shoot_sil
+snd_empty			= weapons\pistol_empty
+snd_reload			= weapons\p226\p226_reload_empty
+
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+silencer_hit_power 		= 0.9, 0.9, 0.9, 0.9
+silencer_hit_impulse	 	= 125
+silencer_fire_distance 		= 50
+silencer_bullet_speed	 	= 290
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+[wpn_sig220_hud]:hud_base
+zoom_hide_crosshair	= true
+
+hands_position		= 0.033,-0.1895,0.039
+hands_orientation	= 2,2,0
+hands_position_16x9	= 0.033,-0.1895,0.039
+hands_orientation_16x9	= 2,2,0
+
+item_position		= 0,0,0
+item_orientation	= 0,0,0
+
+item_visual             = dynamics\weapons\wpn_sig220\wpn_sig220_hud.ogf
+attach_place_idx	= 0
+
+shell_point		= 0,0,0
+shell_bone              = gilza
+
+fire_point		= 0,0.031996,0.130350
+fire_bone		= wpn_body
+
+anm_show		= p220_draw
+anm_show_empty		= p220_draw, opened
+anm_hide            	= p220_holster
+anm_hide_empty		= p220_holster, opened
+		
+anm_idle            	= p220_idle
+anm_idle_empty      	= p220_idle, opened
+anm_shots		= p220_shoot, shoot
+anm_shot_l		= p220_shoot, shoot_last
+anm_idle_aim		= p220_aim
+anm_idle_aim_empty	= p220_aim, opened
+		
+anm_reload		= p220_reload, reload
+anm_reload_empty	= p220_reload_empty, reload_empty
+anm_idle_moving		= p220_move
+anm_idle_moving_empty	= p220_move, opened
+anm_idle_sprint		= p220_sprint
+anm_idle_sprint_empty	= p220_sprint, opened
+anm_bore		= p220_aim
+anm_bore_empty		= p220_aim, opened
+
+aim_hud_offset_pos = -0.157750,0.076500,-0.150000
+aim_hud_offset_rot = 0.031200,0.035300,0.000000
+
+aim_hud_offset_pos_16x9 = -0.157750,0.076500,-0.150000
+aim_hud_offset_rot_16x9 = 0.031200,0.035300,0.000000

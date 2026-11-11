@@ -1,0 +1,252 @@
+; Пистолет Макарова - ПМ 
+;-(правлено SR)-------------------------------------
+; калибр 				9х18 мм
+; длина ствола 				93.5 мм
+; магазин				8
+; вес без магазина			0.73
+; эффективная дальность стрельбы	25 м
+; прицельная дальность			---
+; дульная скорость пули			315 м/с
+; темп стрельбы				30 в/с
+;---------------------------------------------------
+[wpn_pm]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection		= spawn_group
+discovery_dependency 		=
+$spawn 				= "weapons\pm"		; option for Level Editor
+$npc				= on							; option for Level Editor
+$prefetch 			= 8
+scheduled 			= off 			; option for ALife Simulator
+cform 				= skeleton
+class 				= WP_PM
+min_radius 			= 1
+max_radius 			= 10
+description			= st_wpn_pm_descr
+
+ef_main_weapon_type		= 0
+ef_weapon_type			= 5
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof			= -1000, 1.0, 1000
+reload_dof			= 0.0, 0.5, 5, 1.7
+;-----------------------------------------------------------------------------
+
+upgrades			= up_gr_ab_pm, up_gr_cd_pm, up_gr_e_pm, up_gr_f_pm, up_gr_g_pm, up_gr_h_pm
+installed_upgrades		=
+upgrade_scheme			= upgrade_scheme_u10a
+
+;--- scope weapons -------------------------------------------------------------
+holder_range_modifier		= 1.0			; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.5			; во сколько раз увеличивается eye_fov
+;-------------------------------------------------------------------------------
+
+cost				= 300
+
+ammo_limit			= 120
+ammo_current		 	= 96
+ammo_elapsed		 	= 8
+ammo_mag_size		 	= 8
+
+ammo_class		 	= ammo_9x18_fmj, ammo_9x18_pmm
+
+hand_dependence		 	= 1
+single_handed			= 1
+
+slot 			 	= 1
+animation_slot			= 1									; type of the animation that will be used
+
+inv_name			= st_wpn_pm
+inv_name_short			= st_wpn_pm
+inv_weight			= 0.73
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 18
+inv_grid_y			= 6
+
+kill_msg_x			= 227
+kill_msg_y			= 82
+kill_msg_width			= 27
+kill_msg_height			= 23
+
+;-------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		= 0.4 		;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+
+;отдача
+cam_relax_speed			= 8		;скорость возврата в исходное положение
+cam_relax_speed_ai		= 360
+cam_dispersion			= 0.5		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.5		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 1.0		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 5.0		;максимальный угол отдачи
+cam_max_angle_horz		= 5.0		;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 1.0		;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor= 10		;увеличение дисперсии в процентах при максимальном износе
+misfire_probability 		= 0.003	 	;вероятность осечки при максимальном износе
+misfire_condition_k		= 0.05
+condition_shot_dec 		= 0.00125	;увеличение износа при каждом выстреле
+;-------------------------------------------------------------------------------
+
+hud 				= wpn_pm_hud
+position 			= -0.021, -0.085, 0.0
+orientation 			= 0, 0, 0
+
+fire_point 			= 0.0, 0.133, 0.161
+
+flame_particles			= weapons\generic_weapon03
+smoke_particles			= weapons\generic_shoot_00
+
+shell_point		 	= 0.0, 0.133, 0.047
+shell_dir		 	= 0.0, 0.0, 0.4
+shell_particles	 		= weapons\9x18
+
+PDM_disp_base 			= 1.0
+PDM_disp_vel_factor 		= 0.2
+PDM_disp_accel_factor 		= 0.2
+PDM_disp_crouch	 		= 1.0
+PDM_disp_crouch_no_acc 		= 1.0
+
+; ttc
+hit_power			= 1.0, 1.0, 1.0, 1.0
+hit_impulse	  		= 75
+hit_type 			= fire_wound
+
+fire_distance			= 25
+bullet_speed		 	= 315
+rpm				= 250
+rpm_empty_click 	 	= 200
+; end ttc
+
+use_aim_bullet			= true			; Поддерживается ли первая суппер пуля
+time_to_aim			= 1.0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;strap_position 		= -0.1,-0.45,0.2	; position (offset) and orientation of the weapon when it is strapped
+;strap_orientation 		= 1.57,0,0		; (3rd person view)
+;strap_bone0			= bip01_spine2
+;strap_bone1			= bip01_spine1
+
+startup_ammo 			= 90
+
+visual 				= dynamics\weapons\wpn_pm\wpn_pm.ogf
+
+light_color			= 0.6,0.5,0.3
+light_range			= 3.0
+light_var_color			= 0.05
+light_var_range			= 0.5
+light_time 			= 0.2
+
+ph_mass				= 1
+
+;addons
+scope_status			= 0
+silencer_status			= 2
+grenade_launcher_status		= 0
+
+zoom_enabled			= true
+scope_zoom_factor		= 55
+
+silencer_name 			= wpn_addon_silencer		; section name for the attachable silencer
+silencer_x 			= 39						; offset in inventory icon
+silencer_y 			= -16
+
+;звуки
+snd_draw			= weapons\pm\pm_draw
+snd_holster			= weapons\pistol_holster
+snd_shoot			= weapons\pm\pm_shoot
+snd_shoot1			= weapons\pm\pm_shoot1
+snd_silncer_shot		= weapons\pm\pm_shoot_sil
+snd_empty			= weapons\pm\pm_empty
+snd_reload			= weapons\pm\pm_reload_empty
+snd_close			= weapons\generic_close
+
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+silencer_hit_power 		= 0.9, 0.9, 0.9, 0.9
+silencer_hit_impulse	 	= 75
+silencer_fire_distance 		= 23
+silencer_bullet_speed	 	= 290
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+[wpn_pm_hud]:hud_base
+zoom_hide_crosshair		= true
+
+hands_position			= 0.033,-0.1895,0.039
+hands_orientation		= 2,2,0
+hands_position_16x9		= 0.033,-0.1895,0.039
+hands_orientation_16x9		= 2,2,0
+
+item_position			= 0,0,0
+item_orientation		= 0,0,0
+
+item_visual             	= dynamics\weapons\wpn_pm\wpn_pm_hud
+attach_place_idx		= 0
+
+shell_point			= 0,0,0
+shell_bone              	= gilza
+
+fire_point			= 0,0,0
+fire_bone               	= muzzle
+
+anm_show				= pm_draw
+anm_show_empty				= pm_draw, opened
+anm_hide            			= pm_holster
+anm_hide_empty				= pm_holster, opened
+		
+anm_idle            			= pm_idle
+anm_idle_empty      			= pm_idle, opened
+anm_shots				= pm_shoot, shoot
+anm_shot_l				= pm_shoot, shoot_last
+anm_idle_aim				= pm_idle_aim
+anm_idle_aim_empty			= pm_idle_aim, opened
+		
+anm_reload				= pm_reload, reload
+anm_reload_empty			= pm_reload_empty, reload_empty
+anm_idle_moving				= pm_idle_moving
+anm_idle_moving_empty			= pm_idle_moving, opened
+anm_idle_sprint				= pm_idle_sprint
+anm_idle_sprint_empty			= pm_idle_sprint, opened
+anm_bore				= pm_idle_aim
+anm_bore_empty				= pm_idle_aim, opened
+
+
+aim_hud_offset_pos = -0.153950,0.070800,-0.150000
+aim_hud_offset_rot = 0.027400,0.035100,0.000000
+
+aim_hud_offset_pos_16x9 = -0.153950,0.070800,-0.150000
+aim_hud_offset_rot_16x9 = 0.027400,0.035100,0.000000
+
+gl_hud_offset_pos			= 0,0,0
+gl_hud_offset_rot			= 0,0,0
+
+lean_hud_offset_pos			= 0,0,0
+lean_hud_offset_rot			= 0,0,0
+
+[wpn_pm_minigame]:wpn_pm	;new weapon for minigame "Shooting"
+$spawn				= "weapons\wpn_pm_minigame"
+upgrades			= up_gr_ab_pm, up_gr_cd_pm, up_gr_e_pm, up_gr_f_pm, up_gr_g_pm, up_gr_h_pm
+installed_upgrades		= up_b_pm,up_d_pm,up_bd_pm
+upgrade_scheme			= upgrade_scheme_u10a
+ammo_limit			= 100
+;ammo_mag_size			= 10
+ammo_class			= ammo_minigame
+cost				= 0
+quest_item 			= true
+
+[wpn_pm_up]:wpn_pm
+$spawn 				= "weapons\pm_up"		; option for Level Editor
+upgrades			= up_gr_ab_pm, up_gr_cd_pm, up_gr_e_pm, up_gr_f_pm, up_gr_g_pm, up_gr_h_pm
+installed_upgrades		= up_e_pm,up_f_pm,up_h_pm
+upgrade_scheme			= upgrade_scheme_u10a
+
+[wpn_pm_9x19]:wpn_pm
+$spawn 				= "weapons\pm_9x19"		; option for Level Editor
+upgrades			= up_gr_ab_pm, up_gr_cd_pm, up_gr_e_pm, up_gr_f_pm, up_gr_g_pm, up_gr_h_pm
+installed_upgrades		= up_g_pm,up_h_pm
+upgrade_scheme			= upgrade_scheme_u10a

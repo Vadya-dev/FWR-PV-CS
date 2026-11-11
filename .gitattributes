@@ -1,0 +1,6 @@
+# game data must stay byte-exact (cp1251, CRLF)
+* -text
+*.md text eol=lf
+*.py text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf

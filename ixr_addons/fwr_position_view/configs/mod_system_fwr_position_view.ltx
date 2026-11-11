@@ -1,0 +1,464 @@
+; ============================================================================
+; FWR Position & View для FWR CS Edition (IX-Ray) - положение рук, версия 2
+; Подобрано под hud_fov 55 / fov 70 / 16:9 по офлайн-превью моделей и анимаций.
+;
+; Прицеливание: линия прицела строго по центру, оружие без завала (у P&V был
+;   завал 2-3 град.). АН-94, АКС-74У, MP5 приближены к глазу как остальные.
+; Простой: единый стиль от позы прицеливания - вправо/вниз, лёгкий завал и
+;   доворот внутрь. Длинноствол: задняя часть ~11 см от глаза.
+; Пистолеты: максимально близко, но перезарядка/доставание не ближе 13 см
+;   и не больше 12% экрана (у ПБ/ПМ было 6.6 см и 26%).
+; Нож, гранаты, болт, бинокль, детекторы - как в P&V.
+; Чтобы вернуть позиции FWR CS - удалите папку ixr_addons\fwr_position_view.
+; ============================================================================
+
+; w_rg6.ltx - гранатомёт, основа FWR CS; перезарядка: 18% экрана, ближе всего 13 см
+![wpn_rg-6_hud]
+hands_position                  = 0.139533,-0.053627,0.17315
+hands_position_16x9             = 0.139533,-0.053627,0.17315
+hands_orientation               = 4.3329,-0.1942,-5.5215
+hands_orientation_16x9          = 4.3329,-0.1942,-5.5215
+aim_hud_offset_pos              = -0.146003,-0.213309,-0.075971
+aim_hud_offset_pos_16x9         = -0.146003,-0.213309,-0.075971
+aim_hud_offset_rot              = -0.401645,0.032131,-0.118364
+aim_hud_offset_rot_16x9         = -0.401645,0.032131,-0.118364
+
+; w_rpg7.ltx - гранатомёт, основа FWR CS; перезарядка: 16% экрана, ближе всего 8 см
+![wpn_rpg7_hud]
+hands_position                  = 0.131244,-0.055446,0.221642
+hands_position_16x9             = 0.131244,-0.055446,0.221642
+hands_orientation               = 2,-1,-6
+hands_orientation_16x9          = 2,-1,-6
+aim_hud_offset_pos              = -0.082739,0.035887,-0.017861
+aim_hud_offset_pos_16x9         = -0.082739,0.035887,-0.017861
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_beretta.ltx - пистолет, основа P&V; перезарядка: 9% экрана, ближе всего 13 см
+![wpn_beretta_hud]
+hands_position                  = -0.041169,-0.14623,-0.31038
+hands_position_16x9             = -0.041169,-0.14623,-0.31038
+hands_orientation               = 1.7096,-2.9835,-6.0167
+hands_orientation_16x9          = 1.7096,-2.9835,-6.0167
+item_position                   = 0.000746,-0.002421,0.003479
+item_orientation                = 1.239378,-0.134046,-2.052052
+aim_hud_offset_pos              = -0.056058,0.04631,0.080624
+aim_hud_offset_pos_16x9         = -0.056058,0.04631,0.080624
+aim_hud_offset_rot              = -0.052431,0.052284,-0.142369
+aim_hud_offset_rot_16x9         = -0.052431,0.052284,-0.142369
+
+; w_colt1911.ltx - пистолет, основа P&V; перезарядка: 6% экрана, ближе всего 15 см
+![wpn_colt1911_hud]
+hands_position                  = -0.037822,-0.152051,-0.304111
+hands_position_16x9             = -0.037822,-0.152051,-0.304111
+hands_orientation               = 1.8354,-2.4181,-5.998
+hands_orientation_16x9          = 1.8354,-2.4181,-5.998
+item_position                   = 0.000746,-0.000321,0.003479
+item_orientation                = 1.239378,-0.134046,-2.052052
+aim_hud_offset_pos              = -0.056376,0.046071,0.080639
+aim_hud_offset_pos_16x9         = -0.056376,0.046071,0.080639
+aim_hud_offset_rot              = -0.052431,0.052284,-0.142369
+aim_hud_offset_rot_16x9         = -0.052431,0.052284,-0.142369
+
+; w_desert_eagle.ltx - пистолет, основа P&V; перезарядка: 10% экрана, ближе всего 15 см
+![wpn_desert_eagle_hud]
+hands_position                  = -0.034223,-0.170618,-0.266877
+hands_position_16x9             = -0.034223,-0.170618,-0.266877
+hands_orientation               = 1.9974,-1.4934,-5.9725
+hands_orientation_16x9          = 1.9974,-1.4934,-5.9725
+item_position                   = 0.000746,-0.000321,0.003479
+item_orientation                = 1.239378,-0.134046,-2.052052
+aim_hud_offset_pos              = -0.058145,0.04474,0.080721
+aim_hud_offset_pos_16x9         = -0.058145,0.04474,0.080721
+aim_hud_offset_rot              = -0.052431,0.052284,-0.142369
+aim_hud_offset_rot_16x9         = -0.052431,0.052284,-0.142369
+
+; w_fort.ltx - пистолет, основа P&V; перезарядка: 6% экрана, ближе всего 14 см
+![wpn_fort_hud]
+hands_position                  = -0.040649,-0.143042,-0.318311
+hands_position_16x9             = -0.040649,-0.143042,-0.318311
+hands_orientation               = 1.7196,-2.8407,-6.013
+hands_orientation_16x9          = 1.7196,-2.8407,-6.013
+item_position                   = 0.000746,-0.002321,0.003479
+item_orientation                = 1.239378,-0.134046,-2.052052
+aim_hud_offset_pos              = -0.055542,0.046698,0.0806
+aim_hud_offset_pos_16x9         = -0.055542,0.046698,0.0806
+aim_hud_offset_rot              = -0.052431,0.052284,-0.142369
+aim_hud_offset_rot_16x9         = -0.052431,0.052284,-0.142369
+
+; w_hpsa.ltx - пистолет, основа P&V; перезарядка: 9% экрана, ближе всего 15 см
+![wpn_hpsa_hud]
+hands_position                  = -0.037246,-0.150358,-0.279528
+hands_position_16x9             = -0.037246,-0.150358,-0.279528
+hands_orientation               = 1.8849,-2.1209,-5.9896
+hands_orientation_16x9          = 1.8849,-2.1209,-5.9896
+item_position                   = 0.000746,-0.000321,0.003479
+item_orientation                = 1.239378,-0.134046,-2.052052
+aim_hud_offset_pos              = -0.057436,0.045273,0.040688
+aim_hud_offset_pos_16x9         = -0.057436,0.045273,0.040688
+aim_hud_offset_rot              = -0.052431,0.052284,-0.142369
+aim_hud_offset_rot_16x9         = -0.052431,0.052284,-0.142369
+
+; w_pb.ltx - пистолет, основа P&V; перезарядка: 10% экрана, ближе всего 15 см
+![wpn_pb_hud]
+hands_position                  = -0.038202,-0.146976,-0.200177
+hands_position_16x9             = -0.038202,-0.146976,-0.200177
+hands_orientation               = 1.8321,-2.8772,-6.0076
+hands_orientation_16x9          = 1.8321,-2.8772,-6.0076
+item_position                   = -0.000714,-0.005282,0.007003
+item_orientation                = 1.239378,-0.134046,-2.052052
+aim_hud_offset_pos              = -0.062883,0.041175,-0.019059
+aim_hud_offset_pos_16x9         = -0.062883,0.041175,-0.019059
+aim_hud_offset_rot              = -0.052431,0.052284,-0.142369
+aim_hud_offset_rot_16x9         = -0.052431,0.052284,-0.142369
+
+; w_pm.ltx - пистолет, основа P&V; перезарядка: 10% экрана, ближе всего 14 см
+![wpn_pm_hud]
+hands_position                  = -0.038194,-0.150556,-0.210109
+hands_position_16x9             = -0.038194,-0.150556,-0.210109
+hands_orientation               = 1.864,-2.4201,-5.9967
+hands_orientation_16x9          = 1.864,-2.4201,-5.9967
+item_position                   = -0.000714,-0.005282,0.007003
+item_orientation                = 1.239378,-0.134046,-2.052052
+aim_hud_offset_pos              = -0.062125,0.041745,-0.019095
+aim_hud_offset_pos_16x9         = -0.062125,0.041745,-0.019095
+aim_hud_offset_rot              = -0.052431,0.052284,-0.142369
+aim_hud_offset_rot_16x9         = -0.052431,0.052284,-0.142369
+
+; w_sig220.ltx - пистолет, основа P&V; перезарядка: 6% экрана, ближе всего 14 см
+![wpn_sig220_hud]
+hands_position                  = -0.043906,-0.151378,-0.311761
+hands_position_16x9             = -0.043906,-0.151378,-0.311761
+hands_orientation               = 1.7376,-2.5835,-6.0064
+hands_orientation_16x9          = 1.7376,-2.5835,-6.0064
+item_position                   = 0.000746,-0.000321,0.003479
+item_orientation                = 1.239378,-0.134046,-2.052052
+aim_hud_offset_pos              = -0.056414,0.046058,0.080633
+aim_hud_offset_pos_16x9         = -0.056414,0.046058,0.080633
+aim_hud_offset_rot              = -0.052431,0.052284,-0.142369
+aim_hud_offset_rot_16x9         = -0.052431,0.052284,-0.142369
+
+; w_usp45.ltx - пистолет, основа P&V; перезарядка: 12% экрана, ближе всего 13 см
+![wpn_usp_hud]
+hands_position                  = -0.037566,-0.160734,-0.28105
+hands_position_16x9             = -0.037566,-0.160734,-0.28105
+hands_orientation               = 1.7123,-2.1224,-5.9968
+hands_orientation_16x9          = 1.7123,-2.1224,-5.9968
+item_position                   = 0.000686,0.002673,0.003656
+item_orientation                = 1.239378,-0.134046,-2.052052
+aim_hud_offset_pos              = -0.057502,0.045223,0.080691
+aim_hud_offset_pos_16x9         = -0.057502,0.045223,0.080691
+aim_hud_offset_rot              = -0.052431,0.052284,-0.142369
+aim_hud_offset_rot_16x9         = -0.052431,0.052284,-0.142369
+
+; w_walther.ltx - пистолет, основа P&V; перезарядка: 8% экрана, ближе всего 15 см
+![wpn_walther_hud]
+hands_position                  = -0.035579,-0.159248,-0.287117
+hands_position_16x9             = -0.035579,-0.159248,-0.287117
+hands_orientation               = 2.0567,-1.7157,-5.975
+hands_orientation_16x9          = 2.0567,-1.7157,-5.975
+item_position                   = 0.000801,-0.003065,0.003310
+item_orientation                = 1.239378,-0.134046,-2.052052
+aim_hud_offset_pos              = -0.057186,0.045452,0.080675
+aim_hud_offset_pos_16x9         = -0.057186,0.045452,0.080675
+aim_hud_offset_rot              = -0.052431,0.052284,-0.142369
+aim_hud_offset_rot_16x9         = -0.052431,0.052284,-0.142369
+
+; w_abakan.ltx - винтовка/ПП/дробовик, основа FWR CS; перезарядка: 8% экрана, ближе всего 11 см
+![wpn_abakan_hud]
+hands_position                  = -0.12698,-0.180028,-0.211459
+hands_position_16x9             = -0.12698,-0.180028,-0.211459
+hands_orientation               = 1.3052,-0.1443,-9.8467
+hands_orientation_16x9          = 1.3052,-0.1443,-9.8467
+aim_hud_offset_pos              = -0.06785,0.041434,0.0518
+aim_hud_offset_pos_16x9         = -0.06785,0.041434,0.0518
+aim_hud_offset_rot              = -0.017456,0.034854,-0.105325
+aim_hud_offset_rot_16x9         = -0.017456,0.034854,-0.105325
+
+; w_ak74.ltx - винтовка/ПП/дробовик, основа P&V; перезарядка: 23% экрана, ближе всего 10 см
+![wpn_ak74_hud]
+hands_position                  = -0.062135,-0.147757,-0.172322
+hands_position_16x9             = -0.062135,-0.147757,-0.172322
+hands_orientation               = 2.0699,0.0002,-5.9991
+hands_orientation_16x9          = 2.0699,0.0002,-5.9991
+aim_hud_offset_pos              = -0.067838,0.041435,0.053281
+aim_hud_offset_pos_16x9         = -0.067838,0.041435,0.053281
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_ak74u.ltx - винтовка/ПП/дробовик, основа FWR CS; перезарядка: 15% экрана, ближе всего 10 см
+![wpn_ak74u_hud]
+hands_position                  = -0.095059,-0.265707,-0.127761
+hands_position_16x9             = -0.095059,-0.265707,-0.127761
+hands_orientation               = 2.003,-0.9642,-5.9999
+hands_orientation_16x9          = 2.003,-0.9642,-5.9999
+aim_hud_offset_pos              = -0.067838,0.041435,0.041829
+aim_hud_offset_pos_16x9         = -0.067838,0.041435,0.041829
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_bm16.ltx - винтовка/ПП/дробовик, основа P&V; перезарядка: 16% экрана, ближе всего 6 см
+![wpn_bm16_hud]
+hands_position                  = 0.010139,-0.081157,-0.29528
+hands_position_16x9             = 0.010139,-0.081157,-0.29528
+hands_orientation               = 2.2957,3.1434,-6.0846
+hands_orientation_16x9          = 2.2957,3.1434,-6.0846
+item_position                   = 0.003550,0.001377,0.000000
+item_orientation                = 0.381034,-3.463222,0.098546
+aim_hud_offset_pos              = -0.067838,0.041435,0.050199
+aim_hud_offset_pos_16x9         = -0.067838,0.041435,0.050199
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_groza.ltx - винтовка/ПП/дробовик, основа P&V; перезарядка: 13% экрана, ближе всего 11 см
+![wpn_groza_hud]
+hands_position                  = -0.060078,-0.198244,-0.111781
+hands_position_16x9             = -0.060078,-0.198244,-0.111781
+hands_orientation               = 2.275,1.1069,-5.571
+hands_orientation_16x9          = 2.275,1.1069,-5.571
+aim_hud_offset_pos              = -0.067804,0.041435,0.074125
+aim_hud_offset_pos_16x9         = -0.067804,0.041435,0.074125
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+gl_hud_offset_pos               = -0.068511,-0.040076,0.013441
+gl_hud_offset_pos_16x9          = -0.068511,-0.040076,0.013441
+gl_hud_offset_rot               = -0.209948,0.019644,-0.068968
+gl_hud_offset_rot_16x9          = -0.209948,0.019644,-0.068968
+
+; w_lr300.ltx - винтовка/ПП/дробовик, основа P&V; перезарядка: 23% экрана, ближе всего 11 см
+![wpn_lr300_hud]
+hands_position                  = -0.058706,-0.204121,-0.184406
+hands_position_16x9             = -0.058706,-0.204121,-0.184406
+hands_orientation               = 1.8045,0.306,-6.0154
+hands_orientation_16x9          = 1.8045,0.306,-6.0154
+item_position                   = -0.000052,-0.001499,-0.000000
+item_orientation                = 0.492284,-1.667776,0.022559
+aim_hud_offset_pos              = -0.067838,0.041435,0.058436
+aim_hud_offset_pos_16x9         = -0.067838,0.041435,0.058436
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_mp5.ltx - винтовка/ПП/дробовик, основа FWR CS; перезарядка: 23% экрана, ближе всего 10 см
+![wpn_mp5_hud]
+hands_position                  = -0.061274,-0.2005,-0.140533
+hands_position_16x9             = -0.061274,-0.2005,-0.140533
+hands_orientation               = 2.1524,0.2734,-5.5691
+hands_orientation_16x9          = 2.1524,0.2734,-5.5691
+aim_hud_offset_pos              = -0.067838,0.041435,0.031828
+aim_hud_offset_pos_16x9         = -0.067838,0.041435,0.031828
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_pkm.ltx - винтовка/ПП/дробовик, основа P&V; перезарядка: 19% экрана, ближе всего 10 см
+![wpn_pkm_hud]
+hands_position                  = -0.045554,-0.112244,-0.140842
+hands_position_16x9             = -0.045554,-0.112244,-0.140842
+hands_orientation               = 2.7105,0.8141,-6.2809
+hands_orientation_16x9          = 2.7105,0.8141,-6.2809
+item_position                   = 0.000109,0.007983,0.000177
+item_orientation                = 0,0,0
+aim_hud_offset_pos              = -0.067838,0.041436,0.076121
+aim_hud_offset_pos_16x9         = -0.067838,0.041436,0.076121
+aim_hud_offset_rot              = -0.017463,0.034902,-0.105329
+aim_hud_offset_rot_16x9         = -0.017463,0.034902,-0.105329
+
+; w_sig550.ltx - винтовка/ПП/дробовик, основа P&V; перезарядка: 14% экрана, ближе всего 9 см
+![wpn_sig550_hud]
+hands_position                  = -0.061244,-0.159678,-0.168332
+hands_position_16x9             = -0.061244,-0.159678,-0.168332
+hands_orientation               = 2.042,-0.3999,-5.9994
+hands_orientation_16x9          = 2.042,-0.3999,-5.9994
+aim_hud_offset_pos              = -0.067838,0.041435,-0.009739
+aim_hud_offset_pos_16x9         = -0.067838,0.041435,-0.009739
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_spas12.ltx - винтовка/ПП/дробовик, основа P&V; перезарядка: 14% экрана, ближе всего 10 см
+![wpn_spas12_hud]
+hands_position                  = -0.062629,-0.14164,-0.185377
+hands_position_16x9             = -0.062629,-0.14164,-0.185377
+hands_orientation               = 2.025,-0.5997,-5.5695
+hands_orientation_16x9          = 2.025,-0.5997,-5.5695
+item_position                   = 0,0,0
+item_orientation                = 0,0,0
+aim_hud_offset_pos              = -0.06786,0.041435,-0.014816
+aim_hud_offset_pos_16x9         = -0.06786,0.041435,-0.014816
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_toz34.ltx - винтовка/ПП/дробовик, основа P&V; перезарядка: 20% экрана, ближе всего 7 см
+![wpn_toz34_hud]
+hands_position                  = -0.135567,-0.133293,-0.202135
+hands_position_16x9             = -0.135567,-0.133293,-0.202135
+hands_orientation               = 2.02,-0.7142,-5.9995
+hands_orientation_16x9          = 2.02,-0.7142,-5.9995
+aim_hud_offset_pos              = -0.067872,0.041435,0.05957
+aim_hud_offset_pos_16x9         = -0.067872,0.041435,0.05957
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_val.ltx - винтовка/ПП/дробовик, основа P&V; перезарядка: 15% экрана, ближе всего 11 см
+![wpn_val_hud]
+hands_position                  = -0.065625,-0.128882,-0.170171
+hands_position_16x9             = -0.065625,-0.128882,-0.170171
+hands_orientation               = 2.0096,-0.8606,-5.9998
+hands_orientation_16x9          = 2.0096,-0.8606,-5.9998
+item_position                   = -0.000999,0.000035,-0.000000
+item_orientation                = 0.0,0.0,0.0
+aim_hud_offset_pos              = -0.068052,0.041466,0.010312
+aim_hud_offset_pos_16x9         = -0.068052,0.041466,0.010312
+aim_hud_offset_rot              = -0.017525,0.034895,-0.105331
+aim_hud_offset_rot_16x9         = -0.017525,0.034895,-0.105331
+
+; w_wincheaster1300.ltx - винтовка/ПП/дробовик, основа P&V; перезарядка: 14% экрана, ближе всего 7 см
+![wpn_winchester1300_hud]
+hands_position                  = -0.061872,-0.127434,-0.196715
+hands_position_16x9             = -0.061872,-0.127434,-0.196715
+hands_orientation               = 2.0452,0.0303,-6.0118
+hands_orientation_16x9          = 2.0452,0.0303,-6.0118
+item_orientation                = -0.013159,-1.106565,0.011314
+aim_hud_offset_pos              = -0.067837,0.041435,-0.025496
+aim_hud_offset_pos_16x9         = -0.067837,0.041435,-0.025496
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_fn2000.ltx - с оптикой, основа FWR CS; перезарядка: 13% экрана, ближе всего 21 см
+![wpn_fn2000_hud]
+hands_position                  = -0.000563,-0.219706,0.258609
+hands_position_16x9             = -0.000563,-0.219706,0.258609
+hands_orientation               = 4.0535,0.566,-6.0002
+hands_orientation_16x9          = 4.0535,0.566,-6.0002
+aim_hud_offset_pos              = -0.126287,0.013271,-0.182074
+aim_hud_offset_pos_16x9         = -0.126287,0.013271,-0.182074
+aim_hud_offset_rot              = 0,0.069813,-0.10472
+aim_hud_offset_rot_16x9         = 0,0.069813,-0.10472
+gl_hud_offset_pos               = -0.190739,0.009159,0.016195
+gl_hud_offset_pos_16x9          = -0.190739,0.009159,0.016195
+gl_hud_offset_rot               = -0.05244,0.070307,-0.107286
+gl_hud_offset_rot_16x9          = -0.05244,0.070307,-0.107286
+
+; w_g36.ltx - с оптикой, основа P&V; перезарядка: 20% экрана, ближе всего 9 см
+![wpn_g36_hud]
+hands_position                  = -0.055636,-0.227895,-0.177627
+hands_position_16x9             = -0.055636,-0.227895,-0.177627
+hands_orientation               = 1.8503,-0.9895,-6.0026
+hands_orientation_16x9          = 1.8503,-0.9895,-6.0026
+aim_hud_offset_pos              = -0.067835,0.041444,-0.038427
+aim_hud_offset_pos_16x9         = -0.067835,0.041444,-0.038427
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_gauss.ltx - с оптикой, основа P&V; перезарядка: 26% экрана, ближе всего 9 см
+![wpn_gauss_hud]
+hands_position                  = -0.049362,-0.203849,-0.119439
+hands_position_16x9             = -0.049362,-0.203849,-0.119439
+hands_orientation               = 2,-1,-5.5699
+hands_orientation_16x9          = 2,-1,-5.5699
+item_position                   = 0,0,0
+item_orientation                = 0,0,0
+aim_hud_offset_pos              = -0.067838,0.041435,-0.087432
+aim_hud_offset_pos_16x9         = -0.067838,0.041435,-0.087432
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_l85.ltx - с оптикой, основа P&V; перезарядка: 36% экрана, ближе всего 7 см
+![wpn_l85_hud]
+hands_position                  = -0.064793,-0.18637,-0.003989
+hands_position_16x9             = -0.064793,-0.18637,-0.003989
+hands_orientation               = 2,-1,-6
+hands_orientation_16x9          = 2,-1,-6
+aim_hud_offset_pos              = -0.070051,0.040613,-0.141528
+aim_hud_offset_pos_16x9         = -0.070051,0.040613,-0.141528
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_svd.ltx - с оптикой, основа P&V; перезарядка: 11% экрана, ближе всего 11 см
+![wpn_svd_hud]
+hands_position                  = 0.001358,-0.032107,-0.010668
+hands_position_16x9             = 0.001358,-0.032107,-0.010668
+hands_orientation               = 1.9281,-0.3222,-5.6205
+hands_orientation_16x9          = 1.9281,-0.3222,-5.6205
+item_position                   = 0.001283,0.004609,0.002137
+item_orientation                = 0.100000,-0.600000,0.000000
+aim_hud_offset_pos              = -0.06788,0.041443,-0.079805
+aim_hud_offset_pos_16x9         = -0.06788,0.041443,-0.079805
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_svu.ltx - с оптикой, основа P&V; перезарядка: 29% экрана, ближе всего 7 см
+![wpn_svu_hud]
+hands_position                  = -0.013674,-0.161671,0.03762
+hands_position_16x9             = -0.013674,-0.161671,0.03762
+hands_orientation               = 1.2153,-0.945,-6.0143
+hands_orientation_16x9          = 1.2153,-0.945,-6.0143
+item_position                   = -0.005996,0.000210,0.000021
+aim_hud_offset_pos              = -0.069342,0.040895,-0.12529
+aim_hud_offset_pos_16x9         = -0.069342,0.040895,-0.12529
+aim_hud_offset_rot              = -0.017464,0.034901,-0.105329
+aim_hud_offset_rot_16x9         = -0.017464,0.034901,-0.105329
+
+; w_vintorez.ltx - с оптикой, основа P&V; перезарядка: 22% экрана, ближе всего 5 см
+![wpn_vintorez_hud]
+hands_position                  = -0.065435,-0.123264,-0.142418
+hands_position_16x9             = -0.065435,-0.123264,-0.142418
+hands_orientation               = 2.0175,-0.7176,-5.5697
+hands_orientation_16x9          = 2.0175,-0.7176,-5.5697
+aim_hud_offset_pos              = -0.068761,0.041192,-0.088501
+aim_hud_offset_pos_16x9         = -0.068761,0.041192,-0.088501
+aim_hud_offset_rot              = -0.017525,0.034895,-0.105331
+aim_hud_offset_rot_16x9         = -0.017525,0.034895,-0.105331
+
+; ---- без изменений относительно P&V ----
+![wpn_binoc_hud]
+hands_position                  = 0,-0.17,-0.15
+hands_position_16x9             = 0,-0.17,-0.15
+aim_hud_offset_pos              = 0,0.03,-0.1
+aim_hud_offset_pos_16x9         = 0,0.03,-0.1
+
+![bolt_hud]
+hands_position                  = 0.033,-0.23,-0.2
+hands_position_16x9             = 0.033,-0.23,-0.2
+hands_orientation               = 0,7,-10
+hands_orientation_16x9          = 0,7,-10
+
+![grenade_f1_hud]
+hands_position                  = -0.061,-0.2,-0.2
+hands_position_16x9             = -0.061,-0.2,-0.2
+hands_orientation               = -0.5,1.0,-10
+hands_orientation_16x9          = -0.5,1.0,-10
+item_position                   = -0.001,0.004,0
+item_orientation                = 18.5,1.5,0
+
+![grenade_gd-05_hud]
+hands_position                  = -0.061,-0.2,-0.2
+hands_position_16x9             = -0.061,-0.2,-0.2
+hands_orientation               = -0.5,1.0,-10
+hands_orientation_16x9          = -0.5,1.0,-10
+item_position                   = -0.001,0.004,0.0
+item_orientation                = 18.5,1.5,0.0
+
+![wpn_knife_hud]
+hands_position                  = 0.033,-0.23,-0.2
+hands_position_16x9             = 0.033,-0.23,-0.2
+hands_orientation               = 0,7,-10
+hands_orientation_16x9          = 0,7,-10
+item_orientation                = 0,0,0
+aim_hud_offset_pos              = -0.077000,0.022000,0.000000
+aim_hud_offset_rot              = 0.000000,0.005000,-0.015000
+gl_hud_offset_pos               = 0,0,0
+gl_hud_offset_rot               = 0,0,0
+
+![grenade_rgd5_hud]
+hands_position                  = -0.061,-0.2,-0.2
+hands_position_16x9             = -0.061,-0.2,-0.2
+hands_orientation               = -0.5,1.0,-10
+hands_orientation_16x9          = -0.5,1.0,-10
+item_position                   = -0.001,0.004,0.0
+item_orientation                = 18.5,1.5,0.0
+
+![detector_base_hud]
+hands_position                  = 0.033,-0.23,-0.2
+hands_position_16x9             = 0.033,-0.23,-0.2
+hands_orientation               = 0,7,-10
+hands_orientation_16x9          = 0,7,-10
+

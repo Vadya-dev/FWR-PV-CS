@@ -1,0 +1,129 @@
+; –учна€ противопехотна€ граната оборонительного типа ‘-1 "лимонка"
+;-(правлено SR)-------------------------------------
+; общий все гранаты с запалом 		600 гр
+; зар€д ¬¬ - тротил 			60 гр
+; возможна€ дальность броска		30-45 м
+; разлет осколков			30 м
+; задержка перед взрывом 		3.2 - 4.2 сек
+; количество осколков			до 200 шт
+;---------------------------------------------------
+[grenade_f1]:identity_immunities,weapon_probability,default_weapon_params,delayed_action_fuse
+GroupControlSection		= spawn_group
+discovery_dependency		=
+$spawn 				= "weapons\grenades\f1"
+$prefetch			= 128
+class				= G_F1
+cform				= skeleton
+description			= st_grenade_f1_descr
+
+ef_weapon_type			= 10
+
+cost				= 500
+
+single_handed			= 1
+
+slot				= 3
+animation_slot			= 7
+
+inv_name			= st_grenade_f1
+inv_name_short			= st_grenade_f1
+inv_weight			= 0.6
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 9
+inv_grid_y			= 9
+
+kill_msg_x			= 1
+kill_msg_y			= 232
+kill_msg_width			= 13
+kill_msg_height			= 23
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof			= 0.5, 1.0, 180
+reload_dof			= 0.0, 0.5, 5, 1.7
+;-------------------------------------------------------------------------------
+
+force_min			= 10		; ~30% от максимума
+force_const			= 25
+force_max			= 30
+force_grow_speed		= 15
+
+;-------------------------------------------------------------------------------
+blast				= 5
+blast_r				= 5
+blast_impulse			= 350
+;delete
+blast_impulse_factor	 	= 1
+
+frags				= 200
+frags_r				= 30
+frag_hit			= 1.50
+frag_hit_impulse		= 64
+
+hit_type_blast			= explosion
+hit_type_frag			= fire_wound
+
+up_throw_factor			= 1.2
+;-------------------------------------------------------------------------------
+
+explode_particles		= explosions\explosion_01
+
+hud				= grenade_f1_hud
+visual				= dynamics\weapons\wpn_grenades\wpn_f1.ogf
+
+light_color			= 1.9, 1.4, 0.5
+light_range			= 25.0
+light_time 			= 0.85
+
+fragment_speed			= 50		;скорость осколков (м/с)
+explode_duration		= 3		;подолжительность взрыва (с)
+
+;звуки
+snd_explode			= weapons\t_rgd5_explosion; t_f1_explosion; f1_explode
+snd_checkout			= weapons\generic_checkout, 1.0, 0.4
+
+attach_position_offset		= -0.053,-0.089,0.0
+attach_angle_offset		= 0, 0, 0
+attach_bone_name		=
+
+// should be deleted after update
+bone_name			= bip01_r_hand
+position_offset			= 0.0, 0.0, 0.0
+angle_offset			= 1.570790, 1.570790, 3.92699
+
+throw_point			= 0.0, 0.3, 0.2
+throw_dir			= 0.0, 0,1
+wm_size				= 0.2
+
+wallmark_section		= explosion_marks
+
+[grenade_f1_hud]:hud_base
+fire_point			= 0,0,0
+fire_bone			= wpn_body
+
+attach_place_idx		= 0
+item_visual			= dynamics\weapons\wpn_grenades\wpn_f1_hud
+
+hands_position			= -0.061000,-0.160000,0.002500
+hands_orientation		= -0.500000,1.000000,-2.000000
+hands_position_16x9		= -0.096500,-0.163000,0.039000
+hands_orientation_16x9		= -4.399999,1.000000,-2.000000
+
+item_position 			= -0.001000,0.004000,0.000000
+item_orientation 		= 18.500000,1.500000,0.000000
+
+anm_show			= lancew_f1_draw
+anm_hide			= lancew_f1_holster
+anm_idle			= lancew_f1_idle, idle
+anm_bore			= lancew_f1_no_reload
+anm_idle_moving			= lancew_f1_moving, moving
+anm_idle_sprint			= lancew_f1_sprint, sprint
+
+anm_throw_begin			= lancew_f1_throw_begin, throw_begin
+anm_throw_idle			= lancew_f1_throw_idle, throw_idle
+anm_throw			= lancew_f1_throw, throw
+
+throw_point			= 0.0,0.4,0.3
+throw_dir			= 0,0,1
+third_person_throw_point_offset = -0.05,0.848,0.706

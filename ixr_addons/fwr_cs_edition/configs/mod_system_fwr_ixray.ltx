@@ -1,0 +1,35 @@
+; ============================================================================
+; FWR CS Edition 1.1 -> IX-Ray: совместимость (DLTX)
+; Файлы FWR перекрывают конфиги IX-Ray из gamedata, здесь возвращаем то,
+; что без этого сломается или потеряется.
+; ============================================================================
+
+; MP5 имеет класс WP_LR300 (оружие с подствольником). Движок IX-Ray читает
+; grenade_class и launch_speed обязательно, а в FWR их нет -> вылет при спавне MP5.
+; Значения взяты из оригинального w_mp5.ltx (подствольника у MP5 по-прежнему нет).
+![wpn_mp5]
+grenade_class				= ammo_vog-25, ammo_vog-25p
+launch_speed				= 0
+
+; Параметры удара ножом "веером" из w_knife.ltx IX-Ray (без них нож работает
+; по старой схеме с одним лучом).
+![wpn_knife]
+splash1_direction			= 0.0, -0.3, 1.0
+splash2_direction			= 0.0, 0.0, 1.0
+spash1_dist				= 1.2
+spash2_dist				= 1
+spash1_radius				= 0.5
+spash2_radius				= 0.25
+splash1_hits_count			= 3
+splash1_pervictim_hcount		= 1
+splash2_hits_count			= 2
+splash_hit_divide_factor		= 0.75
+
+; У этих HUD-секций нет родителя hud_base, поэтому на них не действовали
+; покачивания/наклоны оружия IX-Ray (mod_system_ixray.ltx -> ![hud_base]).
+; Остальные стволы FWR уже наследуют hud_base.
+![wpn_ak74_hud]:hud_base
+![wpn_abakan_hud]:hud_base
+![wpn_ak74u_hud]:hud_base
+![wpn_lr300_hud]:hud_base
+![wpn_mp5_hud]:hud_base
