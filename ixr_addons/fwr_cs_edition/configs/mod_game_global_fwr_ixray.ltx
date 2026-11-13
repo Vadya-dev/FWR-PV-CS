@@ -1,0 +1,5 @@
+; FWR CS Edition (IX-Ray): DLTX for game_global.ltx
+; F7 (engine dev hotkey "reload configs + restart") loses addon files on IX-Ray and crashes
+; the restarted game; fwr_ixray_keys.on_key_press swallows F7 and lets every other key through.
+![callbacks]
+OnKeyPress = fwr_ixray_keys.on_key_press

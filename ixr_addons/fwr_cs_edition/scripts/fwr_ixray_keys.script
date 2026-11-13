@@ -1,0 +1,18 @@
+-- FWR CS Edition (IX-Ray): key filter for the level.
+--
+-- The IX-Ray build has a developer hotkey F7 ("reload configs + restart the game")
+-- hardcoded in CLevel::IR_OnKeyboardPress. It rescans $game_config$/$game_scripts$ and
+-- re-mounts addons outside the addon phase, so every config file that comes from an addon
+-- (FWR overrides configs\weapons\*.ltx) disappears from the file system, and the restarted
+-- game crashes with "Can't find include file: weapons\delayed_action_fuse.ltx".
+-- F7 sits right next to quick save (F6) and is only bound to the multiplayer "vote_yes",
+-- so in single player it is swallowed here.
+--
+-- Wired through game_global.ltx [callbacks] OnKeyPress (configs\mod_game_global_fwr_ixray.ltx).
+-- Stock IX-Ray CS leaves OnKeyPress disabled, so every other key keeps the stock behaviour.
+
+local SDL_SCANCODE_F7 = 64
+
+function on_key_press(key, bind)
+	return key == SDL_SCANCODE_F7
+end

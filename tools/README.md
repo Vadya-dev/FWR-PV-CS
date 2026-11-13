@@ -13,6 +13,9 @@
 | `design.py` | синтез поз: выравнивание прицела, стиль простоя |
 | `final.py` | таблица стволов и подбор → `final_ov.json` |
 | `write_mod.py` | `final_ov.json` → `mod_system_fwr_position_view.ltx` |
+| `retune.py` | сдвиг позы простоя в пространстве камеры с компенсацией `aim_hud_offset_pos`/`gl_hud_offset_pos` (прицеливание не меняется) и метрики «простой / ходьба вперёд-влево / прицел / худший кадр перезарядки» (v3) |
+| `barrel_aim.py` | поворот стоек так, чтобы ось ствола (`get_LastFD`) была параллельна оси камеры, с пересчётом прицеливания/подствольника; проверка и метрики → json |
+| `write_barrel_addon.py` | json от `barrel_aim.py` → `ixr_addons/fwr_barrel_aim` |
 | `compare_html.py` | страница «было / стало» |
 | `overview.py` | листы превью по всем стволам |
 
